@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Inherit.onetoOneMapping.Register" table="Loginpage" discriminator-value="reg">
+        <id name="eid" column="eid"></id>
+        <discriminator column="Registeration" type="string" length="20"></discriminator>
+        <property name="ename"></property>
+        <property name="eadr"></property>
+        <property name="mobileNumber"></property>
+    <subclass name="Inherit.onetoOneMapping.Logindetails" discriminator-value="login">
+        <property name="username"></property>
+        <property name="password"></property>
+    </subclass>
+    </class>
+</hibernate-mapping>
